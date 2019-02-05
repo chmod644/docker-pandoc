@@ -8,4 +8,7 @@ RUN apt-get update && apt-get install -y \
         lmodern \
         && rm -rf /var/lib/apt/lists/*
 
+ENV PANDOCPATH /pandoc
+WORKDIR $PANDOCPATH
+
 ENTRYPOINT ["pandoc"]
